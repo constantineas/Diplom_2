@@ -1,4 +1,4 @@
-package ProjectApi;
+package projectApi;
 
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
@@ -6,8 +6,7 @@ import io.restassured.response.ValidatableResponse;
 import static constants.Constants.REQUEST_GET_ORDERS;
 import static io.restassured.RestAssured.given;
 
-public class GetOrdersAPI extends BaseApi{
-
+public class GetOrdersAPI extends BaseApi {
     @Step("Cписок заказов авторизованного пользователя")
     public ValidatableResponse getOrdersWithAuthorization(String accessToken) {
         return given()

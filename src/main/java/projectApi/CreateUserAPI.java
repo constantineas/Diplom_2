@@ -1,4 +1,4 @@
-package ProjectApi;
+package projectApi;
 
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
@@ -8,8 +8,7 @@ import user.User;
 import static constants.Constants.*;
 import static io.restassured.RestAssured.given;
 
-public class CreateUserAPI extends BaseApi{
-
+public class CreateUserAPI extends BaseApi {
     @Step("Создание нового пользователя")
     public ValidatableResponse сreateUser(User user) {
         return given()

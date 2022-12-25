@@ -1,19 +1,19 @@
-import ProjectApi.CreateUserAPI;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import projectApi.CreateUserAPI;
 import user.Autorization;
 import user.Generator;
 import user.User;
 
-import static org.apache.http.HttpStatus.*;
+import static org.apache.http.HttpStatus.SC_OK;
+import static org.apache.http.HttpStatus.SC_UNAUTHORIZED;
 
 @DisplayName("Логин пользователя")
 public class LoginUserTest {
-
     private User user;
     private CreateUserAPI createUser;
     private String accessToken = "default";
@@ -34,7 +34,6 @@ public class LoginUserTest {
     @Test
     @DisplayName("Авторизации под существующим пользователем")
     public void userCanBeLogin() {
-
         ValidatableResponse responseLoginUser =
                 createUser.loginUser(Autorization.from(user))
                         .assertThat().statusCode(SC_OK);
@@ -62,7 +61,6 @@ public class LoginUserTest {
         user.setPassword("dhf6un6u5r6n");
         createUser.loginUser(Autorization.from(user))
                 .assertThat().statusCode(SC_UNAUTHORIZED);
-
     }
 
 }

@@ -1,5 +1,3 @@
-import ProjectApi.CreateOrderAPI;
-import ProjectApi.CreateUserAPI;
 import ingridients.Ingredients;
 import ingridients.IngredientsComp;
 import io.qameta.allure.junit4.DisplayName;
@@ -9,6 +7,8 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import projectApi.CreateOrderAPI;
+import projectApi.CreateUserAPI;
 import user.Generator;
 import user.User;
 
@@ -17,10 +17,8 @@ import java.util.List;
 
 import static org.apache.http.HttpStatus.*;
 
-
 @DisplayName("Создание заказа")
 public class CreateOrdersTest {
-
     private User user;
     private CreateUserAPI createUser;
     private String accessToken = "default";
@@ -40,7 +38,6 @@ public class CreateOrdersTest {
         ingredientList = new ArrayList<>();
         for (IngredientsComp comp : ingredients.getData()) {
             ingredientList.add(comp.get_id());
-
         }
     }
 
@@ -66,7 +63,6 @@ public class CreateOrdersTest {
                 createOrders
                         .сreateOrdersWithAuthorization(accessToken, new Orders(ingredientList))
                         .assertThat().statusCode(SC_OK);
-
         String expected = "true";
         String actual = responseCreateOrders.extract().path("success").toString();
         Assert.assertEquals(expected, actual);
@@ -89,9 +85,8 @@ public class CreateOrdersTest {
                 createOrders
                         .сreateOrdersWithoutAuthorization(new Orders(ingredientList))
                         .assertThat().statusCode(SC_OK);
-
         String expected = "true";
-        String actual= responseCreateOrders.extract().path("success").toString();
+        String actual = responseCreateOrders.extract().path("success").toString();
         Assert.assertEquals(expected, actual);
 
     }

@@ -1,13 +1,13 @@
-package ProjectApi;
+package projectApi;
 
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 
-import static constants.Constants.*;
+import static constants.Constants.REQUEST_GET_USER;
+import static constants.Constants.REQUEST_PATCH_USER;
 import static io.restassured.RestAssured.given;
 
-public class GetUpdatingUserAPI extends BaseApi{
-
+public class GetUpdatingUserAPI extends BaseApi {
     @Step("Иноформация об авторизованном пользователе")
     public ValidatableResponse userWithAuthorization(String accessToken) {
         return given()

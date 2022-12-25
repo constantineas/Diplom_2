@@ -3,11 +3,11 @@ package ingridients;
 import java.util.List;
 
 public class Ingredients {
-
     boolean success;
     List<IngredientsComp> data;
 
-    public Ingredients(){};
+    public Ingredients() {
+    }
 
     public Ingredients(boolean success, List<IngredientsComp> data) {
         this.success = success;

@@ -1,4 +1,4 @@
-package ProjectApi;
+package projectApi;
 
 import ingridients.Ingredients;
 import io.qameta.allure.Step;
@@ -6,12 +6,12 @@ import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import orders.Orders;
 
-import static constants.Constants.*;
+import static constants.Constants.REQUEST_GET_INGREDIENTS;
+import static constants.Constants.REQUEST_POST_CREATE_ORDERS;
 import static io.restassured.RestAssured.given;
 
 @DisplayName("Создание заказа")
-public class CreateOrderAPI extends BaseApi{
-
+public class CreateOrderAPI extends BaseApi {
     @Step("Получить список ингредиентов")
     public Ingredients getIngredients() {
         return given()

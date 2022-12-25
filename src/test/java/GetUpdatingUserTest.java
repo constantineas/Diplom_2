@@ -1,19 +1,19 @@
-import ProjectApi.CreateUserAPI;
-import ProjectApi.GetUpdatingUserAPI;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import projectApi.CreateUserAPI;
+import projectApi.GetUpdatingUserAPI;
 import user.Generator;
 import user.User;
 
-import static org.apache.http.HttpStatus.*;
+import static org.apache.http.HttpStatus.SC_OK;
+import static org.apache.http.HttpStatus.SC_UNAUTHORIZED;
 
 @DisplayName("Изменение данных пользователя")
 public class GetUpdatingUserTest {
-
     private User user;
     private CreateUserAPI createUser;
     private String accessToken = "default";
