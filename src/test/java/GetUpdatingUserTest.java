@@ -4,8 +4,8 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import projectApi.CreateUserAPI;
-import projectApi.GetUpdatingUserAPI;
+import projectapi.CreateUserAPI;
+import projectapi.GetUpdatingUserAPI;
 import user.Generator;
 import user.User;
 

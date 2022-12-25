@@ -7,8 +7,8 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import projectApi.CreateOrderAPI;
-import projectApi.CreateUserAPI;
+import projectapi.CreateOrderAPI;
+import projectapi.CreateUserAPI;
 import user.Generator;
 import user.User;
 

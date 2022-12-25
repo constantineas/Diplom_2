@@ -1,4 +1,4 @@
-package projectApi;
+package projectapi;
 
 import ingridients.Ingredients;
 import io.qameta.allure.Step;
